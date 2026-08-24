@@ -60,21 +60,21 @@ function initShopStatus() {
   const currentHour = now.getHours(); // 0 to 23
   
   // Working Hours: 8:00 AM to 10:00 PM (8 to 22)
-  const isOpen = currentHour >= 8 && currentHour < 22;
+  const isOpen = currentHour >= 5 && currentHour < 20;
 
   statusBadges.forEach(badge => {
     if (isOpen) {
       badge.innerHTML = `
         <span class="status-badge">
           <span class="status-dot"></span>
-          Open Now • Closes 10:00 PM
+          Open Now • Closes 8:00 PM
         </span>
       `;
     } else {
       badge.innerHTML = `
         <span class="status-badge" style="background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); color: #f87171;">
           <span class="status-dot" style="background: #ef4444; animation: none;"></span>
-          Closed Now • Opens Tomorrow 8:00 AM
+          Closed Now • Opens Tomorrow 5:00 AM
         </span>
       `;
     }
@@ -166,7 +166,7 @@ function initBookingForm() {
 
       const encodedMessage = encodeURIComponent(message);
       // Client's primary WhatsApp number: 9952079014
-      const whatsappUrl = `https://wa.me/919952079014?text=${encodedMessage}`;
+      const whatsappUrl = `https://wa.me/917200357052?text=${encodedMessage}`;
 
       // Open WhatsApp in new tab
       window.open(whatsappUrl, '_blank');
